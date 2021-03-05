@@ -3,6 +3,7 @@
   become: true
   become_user: root
   hosts: ec2
+  user: ubuntu
   name: Playbook
   tasks:
   - name: Print debug message
