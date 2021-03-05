@@ -7,11 +7,11 @@
     vars:
       - ansible_host_key_checking: false
     tasks:
-      - name: ensure apache is at the latest version
-        yum:
-          name: httpd
-          state: latest
-      - name: ensure apache is running
-        service:
-          name: httpd
-          state: started
+    - name: "Set hostname to AnsibleFTW"
+      hostname:
+        name: ansibleftw
+    - name: "Set DNS servers"
+      net_system:
+        name_servers:
+          - 8.8.8.8
+          - 8.8.4.4
