@@ -4,11 +4,10 @@
   become_user: root
   hosts: ec2
   name: Playbook
-  tasks: 
-    - 
-      file: "path=/home/ansible/niranjan state=directory mode=775 owner=ansible group=ansible"
-      name: "Create directory"
-  user: ubuntu
+  tasks:
+  - name: Print debug message
+    debug:
+      msg: Hello, world!
   vars: 
     - 
       ansible_host_key_checking: false
