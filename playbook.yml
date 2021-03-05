@@ -1,11 +1,14 @@
----
-  - name: Playbook
-    hosts: ec2
-    user: ubuntu
-    become: yes
-    become_user: root
-    vars:
-      - ansible_host_key_checking: false
-    tasks:
-      - name: Create directory
-      file: path=/home/ansible/niranjan state=directory mode=775 owner=ansible group=ansible
+--- 
+- 
+  become: true
+  become_user: root
+  hosts: ec2
+  name: Playbook
+  tasks: 
+    - 
+      file: "path=/home/ansible/niranjan state=directory mode=775 owner=ansible group=ansible"
+      name: "Create directory"
+  user: ubuntu
+  vars: 
+    - 
+      ansible_host_key_checking: false
