@@ -7,11 +7,5 @@
     vars:
       - ansible_host_key_checking: false
     tasks:
-    - name: "Set hostname to AnsibleFTW"
-      hostname:
-        name: ansibleftw
-    - name: "Set DNS servers"
-      net_system:
-        name_servers:
-          - 8.8.8.8
-          - 8.8.4.4
+      - name: Create directory
+      file: path=/home/ansible/niranjan state=directory mode=775 owner=ansible group=ansible
